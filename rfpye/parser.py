@@ -80,19 +80,19 @@ class CrfsGPS:
 
     @property
     def latitude(self) -> float:
-        return np.median(self._latitude) if self._latitude else -1
+        return np.mean(self._latitude) if self._latitude else -1
 
     @property
     def longitude(self) -> float:
-        return np.median(self._longitude) if self._longitude else -1
+        return np.mean(self._longitude) if self._longitude else -1
 
     @property
     def altitude(self) -> float:
-        return np.median(self._altitude) if self._altitude else -1
+        return np.mean(self._altitude) if self._altitude else -1
 
     @property
     def num_satellites(self) -> float:
-        return np.median(self._num_satellites) if self._num_satellites else 0
+        return np.mode(self._num_satellites) if self._num_satellites else 0
 
     def __repr__(self):
         return f"GPS Data - Median of Coordinates: {self.latitude:.5f}:{self.longitude:.5f} Altitude: {self.altitude:.2f} #Satellites: {self.num_satellites:.1f}"
