@@ -95,7 +95,7 @@ class CrfsGPS:
         return np.mode(self._num_satellites) if self._num_satellites else 0
 
     def __repr__(self):
-        return f"GPS Data - Median of Coordinates: {self.latitude:.5f}:{self.longitude:.5f} Altitude: {self.altitude:.2f} #Satellites: {self.num_satellites:.1f}"
+        return f"GPS:{{'latitude':{self.latitude:.5f},'longitude':{self.longitude:.5f},'Altitude':{self.altitude:.2f},'#Satellites':{self.num_satellites:.1f}}}"
 
 
 class CrfsSpectrum(GetAttr):
